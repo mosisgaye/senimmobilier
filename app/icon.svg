@@ -1,0 +1,50 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond dégradé vert élégant (couleurs du Sénégal) -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="roofGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fond arrondi avec dégradé vert -->
+  <rect width="64" height="64" rx="14" fill="url(#bgGradient)"/>
+
+  <!-- Maison élégante -->
+  <g transform="translate(32, 16)">
+    <!-- Toit moderne doré -->
+    <path d="M-20,12 L0,-10 L20,12 L18,12 L0,-6 L-18,12 Z" fill="url(#roofGradient)" stroke="#f59e0b" stroke-width="1"/>
+
+    <!-- Corps de la maison blanc -->
+    <rect x="-16" y="12" width="32" height="26" fill="white" rx="2"/>
+
+    <!-- Accent rouge (couleur Sénégal) -->
+    <rect x="-16" y="12" width="32" height="3" fill="url(#accentGradient)" rx="1"/>
+
+    <!-- Porte élégante -->
+    <rect x="-6" y="23" width="12" height="15" fill="#047857" rx="1.5"/>
+    <circle cx="3" cy="30" r="1" fill="#fbbf24"/>
+    <line x1="0" y1="23" x2="0" y2="38" stroke="#059669" stroke-width="0.5"/>
+
+    <!-- Fenêtres modernes -->
+    <rect x="-13" y="17" width="6" height="6" fill="#dbeafe" rx="1"/>
+    <rect x="7" y="17" width="6" height="6" fill="#dbeafe" rx="1"/>
+
+    <!-- Croisillons fenêtres -->
+    <line x1="-10" y1="17" x2="-10" y2="23" stroke="#047857" stroke-width="0.8"/>
+    <line x1="-13" y1="20" x2="-7" y2="20" stroke="#047857" stroke-width="0.8"/>
+    <line x1="10" y1="17" x2="10" y2="23" stroke="#047857" stroke-width="0.8"/>
+    <line x1="7" y1="20" x2="13" y2="20" stroke="#047857" stroke-width="0.8"/>
+  </g>
+
+  <!-- Lettre "S" stylisée en bas à droite -->
+  <text x="46" y="57" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" opacity="0.95">S</text>
+</svg>

@@ -1,103 +1,193 @@
-import Image from "next/image";
+import { Metadata } from 'next'
+import Header from '@/components/Header'
+import HeroSection from '@/components/HeroSection'
+import PropertyCard from '@/components/PropertyCard'
+import Footer from '@/components/Footer'
+import FeaturesSection from '@/components/home/FeaturesSection'
+import CategoriesSection from '@/components/home/CategoriesSection'
+import CTASection from '@/components/home/CTASection'
+import StatsSection from '@/components/home/StatsSection'
+import TestimonialsSection from '@/components/home/TestimonialsSection'
+import HowItWorksSection from '@/components/home/HowItWorksSection'
+import { supabase } from '@/lib/supabase'
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+// Metadata for SEO
+export const metadata: Metadata = {
+  title: 'SenImmobilier - Terrains à Vendre au Sénégal | Plateforme Immobilière',
+  description: 'Trouvez votre terrain idéal au Sénégal. Plus de 800 terrains titrés, viabilisés et vérifiés à Dakar, Mbour, Saly et partout au Sénégal. Transactions sécurisées avec agents certifiés.',
+  keywords: [
+    'terrain Sénégal',
+    'terrain à vendre Dakar',
+    'terrain titré Sénégal',
+    'immobilier Sénégal',
+    'terrain Mbour',
+    'terrain Saly',
+    'achat terrain Sénégal',
+    'terrain viabilisé',
+    'investissement immobilier Sénégal'
+  ],
+  openGraph: {
+    title: 'SenImmobilier - Terrains à Vendre au Sénégal',
+    description: 'La plateforme immobilière de référence au Sénégal. Plus de 800 terrains titrés et viabilisés.',
+    url: 'https://senimmobilier.sn',
+    siteName: 'SenImmobilier',
+    locale: 'fr_FR',
+    type: 'website',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&h=630&fit=crop',
+        width: 1200,
+        height: 630,
+        alt: 'Terrains à vendre au Sénégal - SenImmobilier',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SenImmobilier - Terrains à Vendre au Sénégal',
+    description: 'La plateforme immobilière de référence au Sénégal. Plus de 800 terrains titrés et viabilisés.',
+    images: ['https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&h=630&fit=crop'],
+  },
+  alternates: {
+    canonical: 'https://senimmobilier.sn',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
+
+// Fetch featured properties server-side
+async function getFeaturedProperties() {
+  try {
+    const { data, error } = await supabase
+      .from('listings')
+      .select(`
+        *,
+        seller:sellers(name, phone_e164, verified, type, logo_url),
+        media(url, type, is_cover, display_order)
+      `)
+      .eq('status', 'published')
+      .order('created_at', { ascending: false })
+      .limit(8)
+
+    if (error) throw error
+    return data || []
+  } catch (error) {
+    console.error('Error fetching properties:', error)
+    return []
+  }
+}
+
+// Fetch stats server-side
+async function getStats() {
+  try {
+    const [
+      { count: totalListings },
+      { count: totalSellers },
+      { count: verifiedListings },
+    ] = await Promise.all([
+      supabase.from('listings').select('*', { count: 'exact', head: true }).eq('status', 'published'),
+      supabase.from('sellers').select('*', { count: 'exact', head: true }),
+      supabase.from('listings').select('*', { count: 'exact', head: true }).eq('status', 'published').eq('verified', true),
+    ])
+
+    return {
+      totalListings: totalListings || 0,
+      totalSellers: totalSellers || 0,
+      verifiedListings: verifiedListings || 0,
+      satisfiedClients: 1200, // This would come from a reviews/clients table
+    }
+  } catch (error) {
+    console.error('Error fetching stats:', error)
+    return {
+      totalListings: 800,
+      totalSellers: 150,
+      verifiedListings: 650,
+      satisfiedClients: 1200,
+    }
+  }
+}
+
+export default async function Home() {
+  // Fetch data server-side in parallel
+  const [properties, stats] = await Promise.all([
+    getFeaturedProperties(),
+    getStats(),
+  ])
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <HeroSection />
+
+      {/* Stats Section */}
+      <StatsSection stats={stats} />
+
+      {/* Featured Properties */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Propriétés en vedette
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Découvrez notre sélection des meilleures propriétés disponibles actuellement
+            </p>
+          </div>
+
+          {properties.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500">Aucune propriété disponible pour le moment</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {properties.map((property) => (
+                <PropertyCard key={property.id} property={property} />
+              ))}
+            </div>
+          )}
+
+          {properties.length > 0 && (
+            <div className="text-center mt-12">
+              <a
+                href="/terrains"
+                className="inline-block px-8 py-3 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 transition-colors"
+              >
+                Voir toutes les propriétés
+              </a>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Categories */}
+      <CategoriesSection />
+
+      {/* How It Works */}
+      <HowItWorksSection />
+
+      {/* Features */}
+      <FeaturesSection />
+
+      {/* Testimonials */}
+      <TestimonialsSection />
+
+      {/* CTA Section */}
+      <CTASection />
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  )
+}
+
+// Revalidation every 5 minutes
+export const revalidate = 300
