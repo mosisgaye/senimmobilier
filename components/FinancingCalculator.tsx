@@ -32,10 +32,10 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
   }
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-100 shadow-lg">
+    <div className="bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-6 border border-emerald-100 shadow-lg">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-3 bg-blue-600 rounded-xl">
+        <div className="p-3 bg-emerald-600 rounded-xl">
           <Calculator className="h-6 w-6 text-white" />
         </div>
         <div>
@@ -52,7 +52,7 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
             <label className="text-sm font-medium text-gray-700">
               Apport initial
             </label>
-            <span className="text-lg font-bold text-blue-600">
+            <span className="text-lg font-bold text-emerald-600">
               {downPaymentPercent}%
             </span>
           </div>
@@ -62,7 +62,7 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
             max="50"
             value={downPaymentPercent}
             onChange={(e) => setDownPaymentPercent(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
           />
           <div className="flex justify-between text-xs text-gray-500 mt-1">
             <span>10%</span>
@@ -76,7 +76,7 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
             <label className="text-sm font-medium text-gray-700">
               Durée du prêt
             </label>
-            <span className="text-lg font-bold text-blue-600">
+            <span className="text-lg font-bold text-emerald-600">
               {loanTerm} ans
             </span>
           </div>
@@ -86,7 +86,7 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
             max="25"
             value={loanTerm}
             onChange={(e) => setLoanTerm(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
           />
           <div className="flex justify-between text-xs text-gray-500 mt-1">
             <span>5 ans</span>
@@ -100,7 +100,7 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
             <label className="text-sm font-medium text-gray-700">
               Taux d'intérêt
             </label>
-            <span className="text-lg font-bold text-blue-600">
+            <span className="text-lg font-bold text-emerald-600">
               {interestRate.toFixed(1)}%
             </span>
           </div>
@@ -111,7 +111,7 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
             step="0.5"
             value={interestRate}
             onChange={(e) => setInterestRate(Number(e.target.value))}
-            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+            className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
           />
           <div className="flex justify-between text-xs text-gray-500 mt-1">
             <span>3%</span>
@@ -121,7 +121,7 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
       </div>
 
       {/* Results */}
-      <div className="space-y-3 p-4 bg-white rounded-xl border-2 border-blue-200">
+      <div className="space-y-3 p-4 bg-white rounded-xl border-2 border-emerald-200">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <DollarSign className="h-4 w-4 text-gray-600" />
@@ -141,10 +141,10 @@ export default function FinancingCalculator({ terrainPrice }: FinancingCalculato
         <div className="pt-3 border-t border-gray-200">
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-blue-600" />
+              <Calendar className="h-5 w-5 text-emerald-600" />
               <span className="text-sm font-medium text-gray-900">Mensualité</span>
             </div>
-            <span className="text-2xl font-bold text-blue-600">
+            <span className="text-2xl font-bold text-emerald-600">
               {formatPrice(monthlyPayment)} FCFA
             </span>
           </div>

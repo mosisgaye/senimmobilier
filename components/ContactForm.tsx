@@ -168,7 +168,7 @@ export default function ContactForm({ propertyId, propertyTitle, onSuccess, defa
               required
               minLength={2}
               disabled={loading || isRateLimited}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               placeholder="Votre nom et pr�nom"
             />
           </div>
@@ -189,7 +189,7 @@ export default function ContactForm({ propertyId, propertyTitle, onSuccess, defa
               onChange={handleChange}
               required
               disabled={loading || isRateLimited}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               placeholder="votre@email.com"
             />
           </div>
@@ -211,7 +211,7 @@ export default function ContactForm({ propertyId, propertyTitle, onSuccess, defa
               required
               minLength={9}
               disabled={loading || isRateLimited}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               placeholder="+221 77 123 45 67"
             />
           </div>
@@ -231,7 +231,7 @@ export default function ContactForm({ propertyId, propertyTitle, onSuccess, defa
               value={formData.visit_date}
               onChange={handleChange}
               disabled={loading || isRateLimited}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             />
           </div>
         </div>
@@ -252,7 +252,7 @@ export default function ContactForm({ propertyId, propertyTitle, onSuccess, defa
               minLength={10}
               rows={4}
               disabled={loading || isRateLimited}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all resize-none disabled:opacity-50 disabled:cursor-not-allowed"
               placeholder="Bonjour, je suis int�ress� par ce terrain. Pourriez-vous me fournir plus d'informations?"
             />
           </div>
@@ -274,7 +274,7 @@ export default function ContactForm({ propertyId, propertyTitle, onSuccess, defa
           whileTap={{ scale: loading || isRateLimited ? 1 : 0.99 }}
           type="submit"
           disabled={loading || isRateLimited}
-          className="w-full py-3 px-6 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium rounded-lg hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl"
+          className="w-full py-3 px-6 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-medium rounded-lg hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg hover:shadow-xl"
         >
           {loading ? (
             <span className="flex items-center justify-center gap-2">

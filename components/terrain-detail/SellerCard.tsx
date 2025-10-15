@@ -28,6 +28,9 @@ export default function SellerCard({ seller }: SellerCardProps) {
               alt={seller.name}
               fill
               className="object-cover"
+              sizes="64px"
+              loading="lazy"
+              quality={80}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
@@ -82,7 +85,7 @@ export default function SellerCard({ seller }: SellerCardProps) {
           {/* Voir toutes les annonces */}
           <Link
             href={`/vendeurs/${seller.id}`}
-            className="inline-block mt-4 text-primary-600 hover:text-primary-700 font-medium text-sm hover:underline"
+            className="inline-block mt-4 text-emerald-600 hover:text-emerald-700 font-medium text-sm hover:underline"
           >
             Voir toutes ses annonces →
           </Link>

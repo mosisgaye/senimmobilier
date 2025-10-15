@@ -135,7 +135,7 @@ export default function TestAPIPage() {
   const getStatusIcon = (status: TestStatus) => {
     switch (status) {
       case 'loading':
-        return <Loader2 className="h-6 w-6 text-blue-500 animate-spin" />
+        return <Loader2 className="h-6 w-6 text-emerald-500 animate-spin" />
       case 'success':
         return <CheckCircle className="h-6 w-6 text-green-500" />
       case 'error':
@@ -158,7 +158,7 @@ export default function TestAPIPage() {
 
           <button
             onClick={testAll}
-            className="w-full mb-8 px-6 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg font-medium hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg"
+            className="w-full mb-8 px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-lg font-medium hover:from-emerald-700 hover:to-emerald-800 transition-all shadow-lg"
           >
             Tester Tous les Services
           </button>
@@ -179,7 +179,7 @@ export default function TestAPIPage() {
                 <button
                   onClick={testGoogleMaps}
                   disabled={googleMaps.status === 'loading'}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50"
                 >
                   Tester
                 </button>
@@ -213,7 +213,7 @@ export default function TestAPIPage() {
                 <button
                   onClick={testSupabase}
                   disabled={supabase.status === 'loading'}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50"
                 >
                   Tester
                 </button>
@@ -247,7 +247,7 @@ export default function TestAPIPage() {
                 <button
                   onClick={testRedis}
                   disabled={redis.status === 'loading'}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50"
                 >
                   Tester
                 </button>
@@ -281,7 +281,7 @@ export default function TestAPIPage() {
                 <button
                   onClick={testResend}
                   disabled={resend.status === 'loading'}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50"
                 >
                   Tester
                 </button>

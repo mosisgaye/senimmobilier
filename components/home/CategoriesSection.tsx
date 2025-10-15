@@ -66,6 +66,9 @@ export default function CategoriesSection() {
                     alt={category.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    loading="lazy"
+                    quality={80}
                   />
                   <div className="absolute bottom-4 left-4 z-20">
                     <h3 className="text-white font-semibold text-lg">{category.name}</h3>

@@ -172,8 +172,8 @@ export default function TerrainHero({ terrain }: TerrainHeroProps) {
         </motion.div>
 
         {/* Surface */}
-        <div className="bg-blue-50 rounded-xl p-4 text-center border border-blue-100">
-          <Square className="h-5 w-5 text-blue-600 mx-auto mb-1" />
+        <div className="bg-emerald-50 rounded-xl p-4 text-center border border-emerald-100">
+          <Square className="h-5 w-5 text-emerald-600 mx-auto mb-1" />
           <div className="text-sm text-gray-600">Surface</div>
           <div className="text-xl font-bold text-gray-900">
             {terrain.area_sqm.toLocaleString('fr-FR')} m²

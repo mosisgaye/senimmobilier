@@ -63,7 +63,7 @@ export default function ContactSidebar({ terrain, seller }: ContactSidebarProps)
             href={`tel:${seller.phone_e164}`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors shadow-md"
+            className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors shadow-md"
           >
             <Phone className="h-5 w-5" />
             Appeler

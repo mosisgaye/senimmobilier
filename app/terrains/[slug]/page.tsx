@@ -6,11 +6,10 @@ import TerrainGallery from '@/components/terrain-detail/TerrainGallery'
 import TerrainHero from '@/components/terrain-detail/TerrainHero'
 import TerrainFeatures from '@/components/terrain-detail/TerrainFeatures'
 import TerrainDescription from '@/components/terrain-detail/TerrainDescription'
-import TerrainMapDetail from '@/components/terrain-detail/TerrainMapDetail'
 import DocumentsPanel from '@/components/terrain-detail/DocumentsPanel'
-import ContactSidebar from '@/components/terrain-detail/ContactSidebar'
-import SellerCard from '@/components/terrain-detail/SellerCard'
-import SimilarTerrains from '@/components/terrain-detail/SimilarTerrains'
+import FeaturesSidebar from '@/components/terrain-detail/FeaturesSidebar'
+import { RealEstateListingJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd'
+import { generateTerrainMetadata, baseUrl } from '@/lib/seo-config'
 import { supabase } from '@/lib/supabase'
 
 // Fonction pour récupérer le terrain par slug
@@ -51,29 +50,6 @@ async function getTerrain(slug: string) {
   }
 }
 
-// Fonction pour récupérer les terrains similaires
-async function getSimilarTerrains(currentTerrain: any) {
-  try {
-    const { data, error } = await supabase
-      .from('listings')
-      .select(`
-        *,
-        seller:sellers(type, name, verified),
-        media(url, type, is_cover)
-      `)
-      .eq('status', 'published')
-      .eq('intent', currentTerrain.intent)
-      .eq('city', currentTerrain.city)
-      .neq('id', currentTerrain.id)
-      .limit(6)
-
-    if (error) throw error
-    return data || []
-  } catch (error) {
-    console.error('Erreur terrains similaires:', error)
-    return []
-  }
-}
 
 // Page principale (Server Component)
 export default async function TerrainDetailPage({
@@ -89,9 +65,6 @@ export default async function TerrainDetailPage({
     notFound()
   }
 
-  // Récupérer terrains similaires
-  const similarTerrains = await getSimilarTerrains(terrain)
-
   // Organiser les médias
   const coverImage = terrain.cover_image_url ||
     terrain.media?.find((m: any) => m.is_cover)?.url ||
@@ -104,9 +77,20 @@ export default async function TerrainDetailPage({
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO JSON-LD Schema.org */}
+      <RealEstateListingJsonLd terrain={terrain} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Accueil', url: baseUrl },
+          { name: 'Terrains', url: `${baseUrl}/terrains` },
+          { name: terrain.city, url: `${baseUrl}/terrains?city=${terrain.city}` },
+          { name: terrain.title, url: `${baseUrl}/terrains/${terrain.slug}` },
+        ]}
+      />
+
       <Header />
 
-      {/* Hero avec galerie */}
+      {/* Galerie avec visite guidée */}
       <div className="mt-16">
         <TerrainGallery media={allMedia} coverImage={coverImage} title={terrain.title} />
       </div>
@@ -137,44 +121,21 @@ export default async function TerrainDetailPage({
               areaSqm={terrain.area_sqm}
             />
 
-            {/* Carte Interactive + Street View + Distances */}
-            <TerrainMapDetail
-              lat={terrain.lat}
-              lng={terrain.lng}
-              geoPolygon={terrain.geom}
-              city={terrain.city}
-              neighborhood={terrain.neighborhood}
-              address={terrain.address}
-            />
-
             {/* Documents Légaux */}
             {terrain.documents && terrain.documents.length > 0 && (
               <DocumentsPanel documents={terrain.documents} verified={terrain.verified} />
             )}
 
-            {/* Informations Vendeur */}
-            <SellerCard seller={terrain.seller} />
-
           </div>
 
-          {/* Sidebar Contact (1/3) - Sticky */}
+          {/* Sidebar Caractéristiques & Atouts (1/3) - Sticky */}
           <div className="lg:col-span-1">
             <div className="sticky top-24">
-              <ContactSidebar
-                terrain={terrain}
-                seller={terrain.seller}
-              />
+              <FeaturesSidebar terrain={terrain} />
             </div>
           </div>
 
         </div>
-
-        {/* Terrains similaires */}
-        {similarTerrains.length > 0 && (
-          <div className="mt-16">
-            <SimilarTerrains terrains={similarTerrains} currentCity={terrain.city} />
-          </div>
-        )}
       </div>
 
       {/* Footer */}
@@ -183,7 +144,7 @@ export default async function TerrainDetailPage({
   )
 }
 
-// Génération des métadonnées SEO
+// Génération des métadonnées SEO optimisées
 export async function generateMetadata({
   params,
 }: {
@@ -194,40 +155,12 @@ export async function generateMetadata({
 
   if (!terrain) {
     return {
-      title: 'Terrain non trouvé | Fatimmo',
+      title: 'Terrain non trouvé | SenImmobilier',
+      description: 'Ce terrain n\'est plus disponible ou n\'existe pas.',
     }
   }
 
-  const price = new Intl.NumberFormat('fr-FR').format(terrain.price_fcfa)
-  const coverImage = terrain.cover_image_url ||
-    terrain.media?.find((m: any) => m.is_cover)?.url
-
-  return {
-    title: `${terrain.title} | Fatimmo`,
-    description: terrain.excerpt || `${terrain.title} - ${price} FCFA - ${terrain.area_sqm}m² à ${terrain.city}. ${terrain.legal_status === 'titre_foncier' ? 'Titre foncier disponible.' : ''}`,
-    keywords: [
-      'terrain',
-      terrain.city,
-      terrain.category,
-      terrain.legal_status,
-      'sénégal',
-      'immobilier',
-      terrain.intent === 'sale' ? 'vente' : 'location'
-    ],
-    openGraph: {
-      title: terrain.title,
-      description: terrain.excerpt,
-      images: coverImage ? [coverImage] : [],
-      type: 'website',
-      siteName: 'Fatimmo',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: terrain.title,
-      description: terrain.excerpt,
-      images: coverImage ? [coverImage] : [],
-    },
-  }
+  return generateTerrainMetadata(terrain)
 }
 
 // Génération statique des routes (ISR - Incremental Static Regeneration)

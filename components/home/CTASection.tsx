@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700">
+    <section className="py-20 bg-gradient-to-r from-emerald-500 to-cyan-500">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ export default function CTASection() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/terrains"
-                className="inline-block px-8 py-3 bg-white text-primary-600 rounded-full font-medium hover:bg-gray-100 transition-colors"
+                className="inline-block px-8 py-3 bg-white text-emerald-600 rounded-full font-medium hover:bg-gray-100 transition-colors shadow-[0_5px_20px_rgba(16,185,129,0.3)]"
               >
                 Voir les terrains
               </Link>

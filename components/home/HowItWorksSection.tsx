@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
+    <section className="py-20 bg-gradient-to-br from-emerald-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,17 +55,17 @@ export default function HowItWorksSection() {
             >
               {/* Connector Line (hidden on mobile) */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary-300 to-primary-200" />
+                <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-emerald-300 to-cyan-300" />
               )}
 
               <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
                 {/* Step Number */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-emerald-500 to-cyan-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
                   {step.number}
                 </div>
 
                 {/* Icon */}
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary-100 to-primary-50 text-primary-600 mb-6">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-emerald-100 to-cyan-100 text-emerald-600 mb-6">
                   <step.icon className="h-10 w-10" />
                 </div>
 

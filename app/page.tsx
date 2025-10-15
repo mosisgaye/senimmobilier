@@ -9,6 +9,7 @@ import CTASection from '@/components/home/CTASection'
 import StatsSection from '@/components/home/StatsSection'
 import TestimonialsSection from '@/components/home/TestimonialsSection'
 import HowItWorksSection from '@/components/home/HowItWorksSection'
+import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd'
 import { supabase } from '@/lib/supabase'
 
 // Metadata for SEO
@@ -125,6 +126,10 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO Schema.org JSON-LD */}
+      <OrganizationJsonLd />
+      <WebSiteJsonLd />
+
       <Header />
       <HeroSection />
 
@@ -159,7 +164,7 @@ export default async function Home() {
             <div className="text-center mt-12">
               <a
                 href="/terrains"
-                className="inline-block px-8 py-3 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 transition-colors"
+                className="inline-block px-8 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-full font-medium hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-[0_5px_20px_rgba(16,185,129,0.3),0_0_10px_rgba(6,182,212,0.2)] hover:shadow-[0_8px_30px_rgba(16,185,129,0.4),0_0_15px_rgba(6,182,212,0.3)]"
               >
                 Voir toutes les propriétés
               </a>

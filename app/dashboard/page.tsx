@@ -56,7 +56,7 @@ export default function DashboardPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <Loader2 className="h-8 w-8 animate-spin text-primary-600" />
+        <Loader2 className="h-8 w-8 animate-spin text-emerald-600" />
       </div>
     )
   }
@@ -69,13 +69,13 @@ export default function DashboardPage() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-              <Home className="h-8 w-8 text-primary-600" />
+              <Home className="h-8 w-8 text-emerald-600" />
               <span className="text-xl font-bold text-gray-900">SenImmobilier</span>
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="/dashboard" className="text-gray-900 hover:text-primary-600 font-medium">
+              <Link href="/dashboard" className="text-gray-900 hover:text-emerald-600 font-medium">
                 Tableau de bord
               </Link>
               <Link href="/dashboard/listings" className="text-gray-600 hover:text-gray-900">
@@ -100,7 +100,7 @@ export default function DashboardPage() {
               {/* User Menu */}
               <div className="relative">
                 <button className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100">
-                  <div className="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center">
                     <User className="h-5 w-5 text-white" />
                   </div>
                   <div className="hidden md:block text-left">
@@ -208,8 +208,8 @@ export default function DashboardPage() {
             className="bg-white rounded-xl shadow-sm p-6 border border-gray-200 hover:shadow-md transition-shadow"
           >
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <Home className="h-6 w-6 text-blue-600" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center">
+                <Home className="h-6 w-6 text-emerald-600" />
               </div>
               <span className="text-xs text-gray-500">Total</span>
             </div>
@@ -277,10 +277,10 @@ export default function DashboardPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <button
               onClick={() => router.push('/create-listing')}
-              className="flex items-center gap-4 p-5 border-2 border-dashed border-gray-300 rounded-xl hover:border-primary-500 hover:bg-primary-50 transition-all group"
+              className="flex items-center gap-4 p-5 border-2 border-dashed border-gray-300 rounded-xl hover:border-emerald-500 hover:bg-emerald-50 transition-all group"
             >
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center group-hover:bg-primary-200 transition-colors">
-                <Plus className="h-6 w-6 text-primary-600" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                <Plus className="h-6 w-6 text-emerald-600" />
               </div>
               <div className="text-left">
                 <h3 className="font-semibold text-gray-900 mb-1">Nouvelle annonce</h3>
@@ -290,10 +290,10 @@ export default function DashboardPage() {
 
             <button
               onClick={() => router.push('/dashboard/listings')}
-              className="flex items-center gap-4 p-5 border-2 border-gray-200 rounded-xl hover:border-primary-500 hover:bg-primary-50 transition-all group"
+              className="flex items-center gap-4 p-5 border-2 border-gray-200 rounded-xl hover:border-emerald-500 hover:bg-emerald-50 transition-all group"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                <Home className="h-6 w-6 text-blue-600" />
+              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center group-hover:bg-emerald-200 transition-colors">
+                <Home className="h-6 w-6 text-emerald-600" />
               </div>
               <div className="text-left">
                 <h3 className="font-semibold text-gray-900 mb-1">Mes annonces</h3>
@@ -303,7 +303,7 @@ export default function DashboardPage() {
 
             <button
               onClick={() => router.push('/dashboard/settings')}
-              className="flex items-center gap-4 p-5 border-2 border-gray-200 rounded-xl hover:border-primary-500 hover:bg-primary-50 transition-all group"
+              className="flex items-center gap-4 p-5 border-2 border-gray-200 rounded-xl hover:border-emerald-500 hover:bg-emerald-50 transition-all group"
             >
               <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-gray-200 transition-colors">
                 <Settings className="h-6 w-6 text-gray-600" />
@@ -331,7 +331,7 @@ export default function DashboardPage() {
             <p className="text-gray-500 mb-4">Aucune activite pour le moment</p>
             <button
               onClick={() => router.push('/create-listing')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium"
             >
               <Plus className="h-5 w-5" />
               Publier votre premiere annonce

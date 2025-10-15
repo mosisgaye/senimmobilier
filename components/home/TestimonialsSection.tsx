@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow relative"
             >
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-primary-100">
+              <div className="absolute top-6 right-6 text-emerald-100">
                 <Quote className="h-12 w-12" fill="currentColor" />
               </div>
 
@@ -82,6 +82,9 @@ export default function TestimonialsSection() {
                     alt={testimonial.name}
                     fill
                     className="object-cover"
+                    sizes="48px"
+                    loading="lazy"
+                    quality={75}
                   />
                 </div>
                 <div>

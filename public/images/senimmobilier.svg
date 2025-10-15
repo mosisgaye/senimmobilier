@@ -1,0 +1,27 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="240" viewBox="0 0 1024 240" role="img" aria-labelledby="title desc">
+  <title id="title">SenImmobilier — Mot-symbole seul</title>
+  <desc id="desc">Logo typographique SenImmobilier avec dégradé émeraude vers cyan et ombre 3D.</desc>
+  <defs>
+    <!-- Dégradé principal -->
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <!-- Effet d’ombre douce -->
+    <filter id="depth" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#10B981" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#06B6D4" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#depth)" transform="translate(0,150)">
+    <text x="50%" y="0" text-anchor="middle"
+          font-family="Poppins, Montserrat, Inter, Arial, sans-serif"
+          font-size="96" font-weight="700"
+          fill="url(#g)">
+      SenImmobilier
+    </text>
+  </g>
+</svg>

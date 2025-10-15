@@ -100,7 +100,7 @@ export default function LoginPage() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-50 flex">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-emerald-50 flex">
       {/* Left Side - Form */}
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -121,7 +121,7 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="flex items-center justify-center mb-8">
             <div className="flex items-center">
-              <Home className="h-10 w-10 text-primary-600 mr-3" />
+              <Home className="h-10 w-10 text-emerald-600 mr-3" />
               <span className="text-3xl font-bold text-gray-900">SenImmobilier</span>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function LoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                     placeholder="vous@exemple.com"
                   />
                 </div>
@@ -178,7 +178,7 @@ export default function LoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
+                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all"
                     placeholder="••••••••"
                   />
                   <button
@@ -194,10 +194,10 @@ export default function LoginPage() {
               {/* Remember & Forgot */}
               <div className="flex items-center justify-between">
                 <label className="flex items-center">
-                  <input type="checkbox" className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded" />
+                  <input type="checkbox" className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded" />
                   <span className="ml-2 text-sm text-gray-600">Se souvenir de moi</span>
                 </label>
-                <Link href="/forgot-password" className="text-sm text-primary-600 hover:text-primary-700">
+                <Link href="/forgot-password" className="text-sm text-emerald-600 hover:text-emerald-700">
                   Mot de passe oublié?
                 </Link>
               </div>
@@ -208,7 +208,7 @@ export default function LoginPage() {
                 whileTap={{ scale: 0.99 }}
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 px-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium rounded-lg hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="w-full py-3 px-4 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-medium rounded-lg hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
               >
                 {loading ? (
                   <span className="flex items-center justify-center">
@@ -277,7 +277,7 @@ export default function LoginPage() {
               <div className="mt-6">
                 <Link
                   href="/register"
-                  className="w-full flex justify-center py-3 px-4 border border-primary-600 rounded-lg text-primary-600 font-medium hover:bg-primary-50 transition-colors"
+                  className="w-full flex justify-center py-3 px-4 border border-emerald-600 rounded-lg text-emerald-600 font-medium hover:bg-emerald-50 transition-colors"
                 >
                   Créer un compte
                 </Link>
@@ -289,7 +289,7 @@ export default function LoginPage() {
 
       {/* Right Side - Image */}
       <div className="hidden lg:block lg:w-1/2 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600/90 to-primary-800/90 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/90 to-emerald-800/90 z-10" />
         <Image
           src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=1080&fit=crop"
           alt="Real Estate"

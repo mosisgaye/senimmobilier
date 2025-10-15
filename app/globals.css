@@ -82,16 +82,26 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Hide Scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Custom Animations */
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 0.5s ease-in-out;
   }
-  
+
   .animate-slide-up {
     animation: slideUp 0.5s ease-out;
   }
-  
+
   .animate-scale-up {
     animation: scaleUp 0.2s ease-out;
   }

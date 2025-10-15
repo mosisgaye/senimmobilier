@@ -84,6 +84,9 @@ export default function PropertyCard({ property }: PropertyCardProps) {
                     "object-cover transition-opacity duration-300",
                     index === currentImageIndex ? "opacity-100" : "opacity-0"
                   )}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  quality={85}
                   onError={() => setImageError(true)}
                 />
               ))}
@@ -146,7 +149,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
                 {property.intent === 'sale' ? 'À vendre' : 'À louer'}
               </span>
               {property.badges?.[0] && (
-                <span className="px-3 py-1 bg-primary-600/90 backdrop-blur-sm rounded-full text-xs font-semibold text-white">
+                <span className="px-3 py-1 bg-gradient-to-r from-emerald-500 to-cyan-500 backdrop-blur-sm rounded-full text-xs font-semibold text-white shadow-[0_2px_10px_rgba(16,185,129,0.3)]">
                   {property.badges[0]}
                 </span>
               )}

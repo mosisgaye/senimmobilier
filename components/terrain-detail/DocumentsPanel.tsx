@@ -56,7 +56,7 @@ export default function DocumentsPanel({ documents, verified }: DocumentsPanelPr
                 className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
+                  <div className="p-2 bg-emerald-50 rounded-lg group-hover:bg-emerald-100 transition-colors">
                     <span className="text-2xl">{docInfo.icon}</span>
                   </div>
                   <div>
@@ -69,19 +69,19 @@ export default function DocumentsPanel({ documents, verified }: DocumentsPanelPr
                     <div className="text-sm text-gray-500">PDF</div>
                   </div>
                 </div>
-                <Download className="h-5 w-5 text-gray-400 group-hover:text-primary-600 transition-colors" />
+                <Download className="h-5 w-5 text-gray-400 group-hover:text-emerald-600 transition-colors" />
               </a>
             )}
           )}
         </div>
       )}
 
-      <div className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-lg">
+      <div className="mt-6 p-4 bg-emerald-50 border border-emerald-100 rounded-lg">
         <div className="flex gap-3">
-          <Shield className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
-          <div className="text-sm text-blue-900">
+          <Shield className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+          <div className="text-sm text-emerald-900">
             <p className="font-medium mb-1">Documents sécurisés</p>
-            <p className="text-blue-700">
+            <p className="text-emerald-700">
               Tous les documents sont vérifiés par notre équipe avant publication pour garantir leur authenticité.
             </p>
           </div>

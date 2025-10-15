@@ -123,7 +123,7 @@ export default function ActiveFiltersChips({
         <button
           key={`${filter.key}-${filter.value || ''}-${index}`}
           onClick={() => onRemoveFilter(filter.key, filter.value)}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-sm font-medium text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 hover:border-primary-300 hover:text-primary-700 transition-all shadow-sm"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white text-sm font-medium text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 hover:border-emerald-300 hover:text-emerald-700 transition-all shadow-sm"
         >
           <span>{filter.label}</span>
           <X className="h-3.5 w-3.5" />

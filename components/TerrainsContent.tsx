@@ -127,7 +127,7 @@ export default function TerrainsContent({
             <select
               value={sort}
               onChange={(e) => handleSortChange(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
             >
               <option value="newest">Plus récents</option>
               <option value="price_asc">Prix croissant</option>
@@ -156,7 +156,7 @@ export default function TerrainsContent({
               </p>
               <button
                 onClick={resetFilters}
-                className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+                className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
               >
                 Réinitialiser les filtres
               </button>
@@ -187,7 +187,7 @@ export default function TerrainsContent({
                       onClick={() => handlePageChange(pageNum)}
                       className={`px-4 py-2 rounded-lg ${
                         pageNum === initialPage
-                          ? 'bg-primary-600 text-white'
+                          ? 'bg-emerald-600 text-white'
                           : 'border border-gray-300 hover:bg-gray-50'
                       }`}
                     >

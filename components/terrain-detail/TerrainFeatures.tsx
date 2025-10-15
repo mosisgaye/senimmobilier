@@ -48,7 +48,7 @@ export default function TerrainFeatures({
       icon: BadgeCheck,
       label: 'Titre Foncier Disponible',
       description: 'Documents légaux prêts',
-      color: 'text-blue-600 bg-blue-50'
+      color: 'text-emerald-600 bg-emerald-50'
     })
   }
 

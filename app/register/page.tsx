@@ -115,7 +115,7 @@ export default function RegisterPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-primary-50 flex items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -131,7 +131,7 @@ export default function RegisterPage() {
             Votre compte a été créé. Vous allez être redirigé vers la page de connexion...
           </p>
           <div className="flex justify-center">
-            <Loader2 className="animate-spin h-6 w-6 text-primary-600" />
+            <Loader2 className="animate-spin h-6 w-6 text-emerald-600" />
           </div>
         </motion.div>
       </div>
@@ -139,10 +139,10 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-50 flex">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-emerald-50 flex">
       {/* Left Side - Image */}
       <div className="hidden lg:block lg:w-1/2 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600/90 to-primary-800/90 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/90 to-emerald-800/90 z-10" />
         <Image
           src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=1920&h=1080&fit=crop"
           alt="Real Estate"
@@ -201,7 +201,7 @@ export default function RegisterPage() {
           {/* Logo */}
           <div className="flex items-center justify-center mb-6">
             <div className="flex items-center">
-              <Home className="h-10 w-10 text-primary-600 mr-3" />
+              <Home className="h-10 w-10 text-emerald-600 mr-3" />
               <span className="text-3xl font-bold text-gray-900">SenImmobilier</span>
             </div>
           </div>
@@ -230,7 +230,7 @@ export default function RegisterPage() {
               <div className="grid grid-cols-2 gap-3">
                 <label className={`relative flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-all ${
                   formData.accountType === 'simple' 
-                    ? 'border-primary-600 bg-primary-50' 
+                    ? 'border-emerald-600 bg-emerald-50' 
                     : 'border-gray-300 hover:border-gray-400'
                 }`}>
                   <input
@@ -248,7 +248,7 @@ export default function RegisterPage() {
                 </label>
                 <label className={`relative flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-all ${
                   formData.accountType === 'professional' 
-                    ? 'border-primary-600 bg-primary-50' 
+                    ? 'border-emerald-600 bg-emerald-50' 
                     : 'border-gray-300 hover:border-gray-400'
                 }`}>
                   <input
@@ -279,7 +279,7 @@ export default function RegisterPage() {
                     value={formData.fullName}
                     onChange={handleChange}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all text-sm"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm"
                     placeholder="Jean Dupont"
                   />
                 </div>
@@ -298,7 +298,7 @@ export default function RegisterPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all text-sm"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm"
                     placeholder="vous@exemple.com"
                   />
                 </div>
@@ -316,7 +316,7 @@ export default function RegisterPage() {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all text-sm"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm"
                     placeholder="+221 XX XXX XX XX"
                   />
                 </div>
@@ -335,7 +335,7 @@ export default function RegisterPage() {
                     value={formData.password}
                     onChange={handleChange}
                     required
-                    className="w-full pl-10 pr-12 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all text-sm"
+                    className="w-full pl-10 pr-12 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm"
                     placeholder="••••••••"
                   />
                   <button
@@ -361,7 +361,7 @@ export default function RegisterPage() {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all text-sm"
+                    className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm"
                     placeholder="••••••••"
                   />
                 </div>
@@ -374,15 +374,15 @@ export default function RegisterPage() {
                   type="checkbox"
                   checked={formData.acceptTerms}
                   onChange={handleChange}
-                  className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded mt-0.5"
+                  className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded mt-0.5"
                 />
                 <label className="ml-2 text-sm text-gray-600">
                   J'accepte les{' '}
-                  <Link href="/terms" className="text-primary-600 hover:text-primary-700">
+                  <Link href="/terms" className="text-emerald-600 hover:text-emerald-700">
                     conditions d'utilisation
                   </Link>{' '}
                   et la{' '}
-                  <Link href="/privacy" className="text-primary-600 hover:text-primary-700">
+                  <Link href="/privacy" className="text-emerald-600 hover:text-emerald-700">
                     politique de confidentialité
                   </Link>
                 </label>
@@ -394,7 +394,7 @@ export default function RegisterPage() {
                 whileTap={{ scale: 0.99 }}
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 px-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium rounded-lg hover:from-primary-700 hover:to-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="w-full py-3 px-4 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-medium rounded-lg hover:from-emerald-700 hover:to-emerald-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
               >
                 {loading ? (
                   <span className="flex items-center justify-center">
@@ -411,7 +411,7 @@ export default function RegisterPage() {
             <div className="mt-6 text-center">
               <span className="text-sm text-gray-600">
                 Déjà inscrit?{' '}
-                <Link href="/login" className="text-primary-600 hover:text-primary-700 font-medium">
+                <Link href="/login" className="text-emerald-600 hover:text-emerald-700 font-medium">
                   Se connecter
                 </Link>
               </span>

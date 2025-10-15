@@ -26,7 +26,7 @@ export default function ComparisonBar({ terrains }: ComparisonBarProps) {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
-        className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-primary-600 shadow-2xl"
+        className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-emerald-600 shadow-2xl"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between gap-4">
@@ -42,7 +42,7 @@ export default function ComparisonBar({ terrains }: ComparisonBarProps) {
                 {selectedTerrainsData.map((terrain) => (
                   <div
                     key={terrain.id}
-                    className="relative group flex items-center gap-2 px-3 py-2 bg-primary-50 border border-primary-200 rounded-lg"
+                    className="relative group flex items-center gap-2 px-3 py-2 bg-emerald-50 border border-emerald-200 rounded-lg"
                   >
                     <div>
                       <p className="text-sm font-medium text-gray-900 truncate max-w-[150px]">
@@ -74,7 +74,7 @@ export default function ComparisonBar({ terrains }: ComparisonBarProps) {
 
               <Link
                 href={`/compare?ids=${selectedTerrains.join(',')}`}
-                className="inline-flex items-center gap-2 px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors shadow-lg"
               >
                 Comparer
                 <ArrowRight className="h-4 w-4" />

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Home, ChevronDown, MapPin, Tag, DollarSign, Handshake, Briefcase, Phone } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -47,29 +48,27 @@ export default function Header() {
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 gap-12">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center"
             >
-              <Home className={cn(
-                "h-8 w-8 transition-colors",
-                isScrolled ? "text-primary-600" : "text-white"
-              )} />
-              <span className={cn(
-                "ml-2 text-xl font-bold transition-colors",
-                isScrolled ? "text-gray-900" : "text-white"
-              )}>
-                SenImmobilier
-              </span>
+              <Image
+                src="/images/senimmobilier.svg"
+                alt="SenImmobilier"
+                width={180}
+                height={60}
+                className="h-14 w-auto"
+                priority
+                quality={100}
+              />
             </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 flex-1 justify-center">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -80,7 +79,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "font-medium transition-colors hover:text-primary-600 flex items-center gap-1",
+                    "font-medium transition-colors hover:text-emerald-600 flex items-center gap-1",
                     isScrolled ? "text-gray-700" : "text-white"
                   )}
                 >
@@ -110,7 +109,7 @@ export default function Header() {
                             <Link
                               key={subItem.href}
                               href={subItem.href}
-                              className="flex items-center gap-3 px-4 py-3 hover:bg-primary-50 transition-colors text-gray-700 hover:text-primary-600"
+                              className="flex items-center gap-3 px-4 py-3 hover:bg-emerald-50 transition-colors text-gray-700 hover:text-emerald-600"
                             >
                               <SubIcon className="h-5 w-5" />
                               <span className="font-medium">{subItem.label}</span>
@@ -126,15 +125,15 @@ export default function Header() {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
             <Link href="/login">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={cn(
                   "px-4 py-2 rounded-full font-medium transition-all",
-                  isScrolled 
-                    ? "text-gray-700 hover:text-primary-600" 
+                  isScrolled
+                    ? "text-gray-700 hover:text-emerald-600"
                     : "text-white hover:text-white/80"
                 )}
               >
@@ -147,10 +146,10 @@ export default function Header() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={cn(
-                  "px-4 py-2 rounded-full font-medium transition-all",
+                  "px-4 py-2 rounded-full font-medium transition-all shadow-lg",
                   isScrolled
-                    ? "bg-primary-600 text-white hover:bg-primary-700"
-                    : "bg-white text-primary-600 hover:bg-gray-100"
+                    ? "bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:from-emerald-600 hover:to-cyan-600 shadow-[0_4px_15px_rgba(16,185,129,0.3)]"
+                    : "bg-white text-emerald-600 hover:bg-gray-100"
                 )}
               >
                 Publier une annonce
@@ -191,7 +190,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center gap-2 py-2 text-gray-700 font-medium hover:text-primary-600 transition-colors"
+                      className="flex items-center gap-2 py-2 text-gray-700 font-medium hover:text-emerald-600 transition-colors"
                     >
                       <ItemIcon className="h-5 w-5" />
                       {item.label}
@@ -208,7 +207,7 @@ export default function Header() {
                               key={subItem.href}
                               href={subItem.href}
                               onClick={() => setIsMobileMenuOpen(false)}
-                              className="flex items-center gap-2 py-2 text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                              className="flex items-center gap-2 py-2 text-sm text-gray-600 hover:text-emerald-600 transition-colors"
                             >
                               <SubIcon className="h-4 w-4" />
                               {subItem.label}
@@ -225,14 +224,14 @@ export default function Header() {
                 <Link
                   href="/login"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full text-center px-4 py-3 border border-primary-600 text-primary-600 rounded-full font-medium hover:bg-primary-50 transition-colors"
+                  className="block w-full text-center px-4 py-3 border border-emerald-600 text-emerald-600 rounded-full font-medium hover:bg-emerald-50 transition-colors"
                 >
                   Se connecter
                 </Link>
                 <Link
                   href="/register"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full text-center px-4 py-3 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 transition-colors"
+                  className="block w-full text-center px-4 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-full font-medium hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-[0_4px_15px_rgba(16,185,129,0.3)]"
                 >
                   Publier une annonce
                 </Link>

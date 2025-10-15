@@ -18,8 +18,8 @@ export default function StatsSection({ stats }: StatsSectionProps) {
       icon: TrendingUp,
       value: stats.totalListings.toLocaleString('fr-FR'),
       label: 'Terrains Disponibles',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-100',
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-100',
     },
     {
       icon: CheckCircle,

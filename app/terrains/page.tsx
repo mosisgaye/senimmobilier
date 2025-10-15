@@ -179,7 +179,7 @@ export default async function TerrainsPage({
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16 mt-16">
+      <section className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white py-16 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Terrains à Vendre au Sénégal
@@ -188,13 +188,13 @@ export default async function TerrainsPage({
             {terrainsData.totalCount} terrains disponibles • Trouvez votre parcelle idéale
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="px-4 py-2 bg-white/20 rounded-full">
+            <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
               🏆 Terrains vérifiés
             </span>
-            <span className="px-4 py-2 bg-white/20 rounded-full">
+            <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
               📜 Titres fonciers disponibles
             </span>
-            <span className="px-4 py-2 bg-white/20 rounded-full">
+            <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
               💰 Paiement échelonné possible
             </span>
           </div>
@@ -219,9 +219,25 @@ export default async function TerrainsPage({
   )
 }
 
-// Metadata pour le SEO
-export const metadata = {
-  title: 'Terrains à Vendre au Sénégal | Fatimmo',
-  description: 'Découvrez notre sélection de terrains à vendre au Sénégal. Terrains titrés, viabilisés et vérifiés à Dakar, Saly, Mbour et dans tout le Sénégal.',
-  keywords: ['terrain', 'vente', 'Sénégal', 'Dakar', 'immobilier', 'titre foncier']
+// Metadata dynamique pour le SEO
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+  const params = await searchParams
+  const { generateTerrainsListMetadata } = await import('@/lib/seo-config')
+
+  // Compter le nombre total de terrains pour les métadonnées
+  const { count } = await supabase
+    .from('listings')
+    .select('*', { count: 'exact', head: true })
+    .eq('status', 'published')
+    .eq('intent', 'sale')
+
+  return generateTerrainsListMetadata({
+    city: params.city as string | undefined,
+    category: params.category as string | undefined,
+    count: count || 0,
+  })
 }

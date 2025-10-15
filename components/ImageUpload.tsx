@@ -51,7 +51,7 @@ export default function ImageUpload({
   const validateFile = (file: File): string | null => {
     // Check file type
     if (!allowedTypes.includes(file.type)) {
-      return `Type de fichier non autorisé. Types acceptés: ${allowedTypes.join(', ')}`
+      return `Type de fichier non autorisï¿½. Types acceptï¿½s: ${allowedTypes.join(', ')}`
     }
 
     // Check file size
@@ -102,7 +102,7 @@ export default function ImageUpload({
 
     // Check max files limit
     if (files.length + fileList.length > maxFiles) {
-      setGlobalError(`Vous ne pouvez télécharger que ${maxFiles} fichier(s) maximum`)
+      setGlobalError(`Vous ne pouvez tï¿½lï¿½charger que ${maxFiles} fichier(s) maximum`)
       return
     }
 
@@ -189,8 +189,8 @@ export default function ImageUpload({
           className={`
             relative border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-all
             ${isDragging
-              ? 'border-primary-500 bg-primary-50'
-              : 'border-gray-300 hover:border-primary-400 hover:bg-gray-50'
+              ? 'border-emerald-500 bg-emerald-50'
+              : 'border-gray-300 hover:border-emerald-400 hover:bg-gray-50'
             }
           `}
         >
@@ -204,8 +204,8 @@ export default function ImageUpload({
           />
 
           <div className="flex flex-col items-center gap-3">
-            <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center">
-              <Upload className="h-8 w-8 text-primary-600" />
+            <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center">
+              <Upload className="h-8 w-8 text-emerald-600" />
             </div>
 
             <div>
@@ -221,7 +221,7 @@ export default function ImageUpload({
             </div>
 
             <div className="text-xs text-gray-500">
-              {files.length} / {maxFiles} fichier(s) téléchargé(s)
+              {files.length} / {maxFiles} fichier(s) tï¿½lï¿½chargï¿½(s)
             </div>
           </div>
         </motion.div>
@@ -264,6 +264,9 @@ export default function ImageUpload({
                     alt={uploadedFile.file.name}
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    quality={85}
+                    unoptimized
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full">
@@ -319,17 +322,17 @@ export default function ImageUpload({
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">
               <CheckCircle className="h-4 w-4 text-green-600" />
-              {files.filter(f => f.status === 'success').length} réussi(s)
+              {files.filter(f => f.status === 'success').length} rï¿½ussi(s)
             </span>
             {files.some(f => f.status === 'error') && (
               <span className="flex items-center gap-1">
                 <AlertCircle className="h-4 w-4 text-red-600" />
-                {files.filter(f => f.status === 'error').length} échoué(s)
+                {files.filter(f => f.status === 'error').length} ï¿½chouï¿½(s)
               </span>
             )}
             {files.some(f => f.status === 'uploading') && (
               <span className="flex items-center gap-1">
-                <Loader2 className="h-4 w-4 animate-spin text-blue-600" />
+                <Loader2 className="h-4 w-4 animate-spin text-emerald-600" />
                 {files.filter(f => f.status === 'uploading').length} en cours
               </span>
             )}

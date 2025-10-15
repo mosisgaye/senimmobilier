@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from './providers';
+import { defaultMetadata } from '@/lib/seo-config';
 
-export const metadata: Metadata = {
-  title: "SenImmobilier - Plateforme Immobilière du Sénégal",
-  description: "Trouvez votre bien immobilier idéal au Sénégal - Terrains, villas, appartements",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,

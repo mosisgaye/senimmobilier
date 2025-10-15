@@ -107,7 +107,7 @@ export default function TerrainCard({ terrain }: TerrainCardProps) {
 
     // Titre foncier disponible
     if (features.title_deed_available) {
-      icons.push({ icon: BadgeCheck, label: 'TF Dispo', color: 'text-blue-600' })
+      icons.push({ icon: BadgeCheck, label: 'TF Dispo', color: 'text-emerald-600' })
     }
 
     // Proche de la mer (depuis proximity)
@@ -156,6 +156,9 @@ export default function TerrainCard({ terrain }: TerrainCardProps) {
             alt={terrain.title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-300"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading="lazy"
+            quality={85}
             onError={() => setImageError(true)}
           />
 
@@ -206,7 +209,7 @@ export default function TerrainCard({ terrain }: TerrainCardProps) {
               className={cn(
                 'p-2 rounded-full hover:bg-white transition-colors shadow-lg',
                 isSelected(terrain.id)
-                  ? 'bg-primary-600 text-white'
+                  ? 'bg-emerald-600 text-white'
                   : 'bg-white/90 backdrop-blur-sm text-gray-700',
                 !isSelected(terrain.id) && !canAddMore && 'opacity-50 cursor-not-allowed'
               )}
@@ -244,7 +247,7 @@ export default function TerrainCard({ terrain }: TerrainCardProps) {
       <div className="p-5">
         {/* Titre */}
         <Link href={`/terrains/${terrain.slug}`}>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-primary-600 transition-colors">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-emerald-600 transition-colors">
             {terrain.title}
           </h3>
         </Link>
@@ -269,7 +272,7 @@ export default function TerrainCard({ terrain }: TerrainCardProps) {
             <Square className="h-4 w-4" />
             <span className="font-medium">{formatArea(terrain.area_sqm)}</span>
           </div>
-          <div className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">
+          <div className="px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-medium">
             📄 {getLegalLabel(terrain.legal_status)}
           </div>
         </div>
@@ -328,7 +331,7 @@ export default function TerrainCard({ terrain }: TerrainCardProps) {
 
           <Link
             href={`/terrains/${terrain.slug}`}
-            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors text-sm"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors text-sm"
           >
             <Phone className="h-4 w-4" />
             Contacter
